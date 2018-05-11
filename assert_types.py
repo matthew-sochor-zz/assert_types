@@ -16,7 +16,10 @@ def assert_types(function):
                 assert isinstance(kwargs[key], parameters[key].annotation), 'Key word argument {} is type {} but should be type {}'.format(key, type(kwargs[key]), parameters[key].annotation)
         out = function(*args, **kwargs)
         if signature.return_annotation != inspect._empty:
-            assert isinstance(out, signature.return_annotation), 'Return type {} should be type {}'.format(type(out), signature.return_annotation)
+            if signature.return_annotation is None:
+                assert out is None, 'Return type {} should be None'.format(type(out))
+            else:
+                assert isinstance(out, signature.return_annotation), 'Return type {} should be type {}'.format(type(out), signature.return_annotation)
         return out
     return wrapper
 
