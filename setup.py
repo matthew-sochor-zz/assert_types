@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="assert_types",
-    version="0.1.5",
+    version="0.1.6",
     description="Python decorator to add assertions for type hints",
     packages=find_packages(),
 
