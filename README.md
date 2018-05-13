@@ -1,5 +1,7 @@
 # assert_types: the python decorator you never knew you needed
-`Python decorator to assert types hints for python functions
+Python decorator to assert types hints for python functions
+
+This is a relatively lightweight version, for a heavier more customizable project, see: https://github.com/RussBaz/enforce
 
 Add this as a decorator in front of any python function and it will add assertions to the type hints
 
@@ -21,8 +23,4 @@ It will add an assertion for each input that is specified, skip over non-specifi
 
 ## Todo
 
-Nested types (e.g. List[str])
-Unions (e.g. Union[str, float])
-
-any other issues, please put them in the issues and I'll fix them as soon as possible.  Or better yet, make a PR!
-
+Get iterators subtypes working!  Add tests!  Generics?
